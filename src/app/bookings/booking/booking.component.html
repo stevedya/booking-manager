@@ -1,0 +1,58 @@
+<form #bookingForm="ngForm" (ngSubmit)="onSubmit(bookingForm)">
+  <div class="form-group">
+    <input type="hidden" name="$key" #$key="ngModel"  [(ngModel)]="bookingService.selectedBooking.$key">
+    <label for="name">Name</label>
+    <!--Bind the value to the model by using ngModel -->
+    <input type="text" class="form-control" name="name" #name="ngModel"
+           [(ngModel)]="bookingService.selectedBooking.name" placeholder="Persons Name" required>
+    <span class="help-block" *ngIf="!name.valid && name.touched">Please enter a name</span>
+  </div>
+  <div class="form-group">
+    <label for="event">Event Type</label>
+    <!--Bind the value to the model by using ngModel -->
+    <input type="text" class="form-control" name="event" #name="ngModel"
+           [(ngModel)]="bookingService.selectedBooking.event" placeholder="Event Type">
+  </div>
+  <div class="form-group">
+    <label for="Date">Date</label>
+    <!--Bind the value to the model by using ngModel -->
+    <input type="date" class="form-control" name="date" #name="ngModel"
+           [(ngModel)]="bookingService.selectedBooking.date" required>
+  </div>
+  <div class="form-group">
+    <label for="Hours">Hours</label>
+    <!--Bind the value to the model by using ngModel -->
+    <input type="text" class="form-control" name="hours" #name="ngModel"
+           [(ngModel)]="bookingService.selectedBooking.hours">
+  </div>
+  <div class="form-group">
+    <label for="Location">Location</label>
+    <!--Bind the value to the model by using ngModel -->
+    <input type="text" class="form-control" name="location" #name="ngModel"
+           [(ngModel)]="bookingService.selectedBooking.location">
+  </div>
+  <div class="form-group">
+    <label for="Info">Extra Info</label>
+    <!--Bind the value to the model by using ngModel -->
+    <textarea name="extraInfo" rows="4" class="form-control" #name="ngModel"
+              [(ngModel)]="bookingService.selectedBooking.extraInfo"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="price">Price</label>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">$</span>
+      </div>
+      <input type="text" class="form-control" name="price" #name="ngModel" aria-label="Amount"
+             [(ngModel)]="bookingService.selectedBooking.price">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-success" [disabled]="!bookingForm.valid"><i class="fas fa-clipboard-check"></i> Submit</button>
+    <button type="button" class="btn btn-warning" (click)="resetForm(bookingForm)"><i class="fas fa-redo-alt"></i> Reset
+    </button>
+
+  </div>
+
+</form>

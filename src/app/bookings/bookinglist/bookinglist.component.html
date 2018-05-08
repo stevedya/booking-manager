@@ -1,0 +1,49 @@
+<div class="card mt-3" *ngFor="let booking of bookingList">
+  <div class="card-header">
+    <strong>{{ booking.event }}</strong>
+    <div class="float-right">
+      <a class="btn" (click)="onEdit(booking)" data-toggle="modal" data-target="#exampleModal"><i class="far fa-edit"></i></a>
+      <a class="btn" (click)="onDelete(booking.$key)"><i class="fas fa-trash-alt"></i></a>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-6">
+        <strong>Person Name:</strong>
+      </div>
+      <div class="col-6">
+        <p> {{ booking.name }}</p>
+      </div>
+      <div class="col-6">
+        <strong>Date:</strong>
+      </div>
+      <div class="col-6">
+        <p> {{ booking.date }}</p>
+      </div>
+      <div class="col-6">
+        <strong>Hours:</strong>
+      </div>
+      <div class="col-6">
+        <p>{{ booking.hours }}</p>
+      </div>
+      <div class="col-6">
+        <strong>Location:</strong>
+      </div>
+      <div class="col-6">
+        <p> {{ booking.location }}</p>
+      </div>
+      <div class="col-6">
+        <strong>Price: </strong>
+      </div>
+      <div class="col-6">
+        <p> {{ booking.price }}</p>
+      </div>
+      <div class="col-6">
+        <strong>Extra Information: </strong>
+      </div>
+      <div class="col-6">
+        <p> {{ booking.extraInfo }}</p>
+      </div>
+    </div>
+  </div>
+</div>

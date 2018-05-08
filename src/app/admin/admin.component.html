@@ -1,0 +1,16 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Admin Panel</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+          aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav" *ngIf="authService.currentUser">
+    <span><strong>Email: </strong> {{ authService.currentUserName }} </span>
+      <div class="ml-auto">
+        <button class="btn btn-danger" (click)="logout()">Logout</button>
+      </div>
+  </div>
+</nav>
+
+<!-- Display App Bookings -->
+<app-bookings></app-bookings>
