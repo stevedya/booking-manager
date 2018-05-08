@@ -5,7 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 It is the start of a booking manager for a dj company.
 
 # Bugs 
-There is one big with logging out and not re routing to the login screen. 
+There is one bug with logging out and not re routing to the login screen. 
 
 ## Development server
 
